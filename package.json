@@ -1,6 +1,6 @@
 {
   "name": "emby-api-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeScript implementation of Emby's api.",
   "main": "index.js",
   "scripts": {
@@ -12,10 +12,10 @@
     "url": "git+https://gitlab.com/ecavard/emby-api-ts.git"
   },
   "keywords": [
-    "['emby'",
-    "'api'",
-    "'typescript'",
-    "'ts']"
+    "emby",
+    "api",
+    "typescript",
+    "ts"
   ],
   "author": "ecavard",
   "license": "ISC",
