@@ -1,4 +1,4 @@
-import axios from './node_modules/axios/index'
+import axios, { AxiosResponse } from 'axios'
 
 export interface IUser {
     Username: string,
@@ -46,9 +46,9 @@ export class EmbyConnector implements IEmbyConnector {
                 headers,
                 url: this.host + '/emby/Users/AuthenticateByName',
                 data: user
-            }).then((response) => {
+            }).then((response: AxiosResponse<any>) => {
                 resolve(response.data)
-            }).catch((error) => {
+            }).catch((error: any) => {
                 reject(error);
             })
         })
