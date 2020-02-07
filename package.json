@@ -1,0 +1,33 @@
+{
+  "name": "emby-api-ts",
+  "version": "0.0.1",
+  "description": "TypeScript implementation of Emby's api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/typescript/bin/tsc --target es2020 index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ecavard/emby-api-ts.git"
+  },
+  "keywords": [
+    "['emby'",
+    "'api'",
+    "'typescript'",
+    "'ts']"
+  ],
+  "author": "ecavard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ecavard/emby-api-ts/issues"
+  },
+  "homepage": "https://gitlab.com/ecavard/emby-api-ts#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "typescript": "^3.7.5"
+  }
+}
