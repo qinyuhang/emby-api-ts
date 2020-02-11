@@ -4,7 +4,7 @@
   "description": "TypeScript implementation of Emby's api.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "node_modules/typescript/bin/tsc"
   },
   "repository": {
@@ -27,10 +27,13 @@
     "axios": "^0.19.2"
   },
   "devDependencies": {
+    "@types/jest": "^25.1.2",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
     "eslint": "^6.8.0",
     "eslint-plugin-tsdoc": "^0.2.1",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   }
 }
