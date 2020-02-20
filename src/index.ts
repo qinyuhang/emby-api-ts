@@ -1,46 +1,57 @@
 import axios, { AxiosResponse, AxiosInstance } from 'axios'
+import {AuthenticateUserByName} from './models/authenticateUserByName'
 
-export interface IUser {
-  Username: string;
-  Pw: string;
-}
-
-export class User implements IUser {
-  Username: string
-  Pw: string
-
-  constructor(user: IUser) {
-    this.Username = user.Username
-    this.Pw = user.Pw
-  }
-}
-
-export interface IEmbyConnector {
-  name: string;
-  host: string;
-}
-
-export class EmbyConnector implements IEmbyConnector {
-  name: string
+export class EmbyConnector {
   host: string
+  embyAPI: AxiosInstance
+  token = ''
+  serverID = ''
+  name = ''
+  userID = ''
 
-  constructor(ebmbyConnector: IEmbyConnector) {
-    this.name = ebmbyConnector.name
-    this.host = ebmbyConnector.host
+  constructor(host: string) {
+    this.host = host
+    this.embyAPI = this.initiateEmbyAPI()
   }
 
-  authenticateByName(username: string, password: string): Promise<any> {
+  authenticateByName(name: string, password: string): Promise<any> {
+    this.name = name
     return new Promise<any>((resolve, reject) => {
-      const user = new User({
-        Username: username,
+      const user: AuthenticateUserByName = {
+        Username: name,
         Pw: password
-      })
-      const emby = this.initiateEmbyAPI()
-      emby.post('/Users/AuthenticateByName', user)
+      }
+      this.embyAPI.post('/Users/AuthenticateByName', user)
       .then((response: AxiosResponse<any>) => {
+        this.token = response.data.AccessToken
+        this.serverID = response.data.ServerId
+        this.userID = response.data.User.Id
+        this.embyAPI.defaults.headers['X-Emby-Token'] = this.token
         resolve(response.data)
       }).catch((error: any) => {
-        reject(error);
+        reject(error)
+      })
+    })
+  }
+
+  getAllMovies(): Promise<any> {
+    return new Promise<any>((resolve, reject) =>{
+      this.embyAPI.get(`/Users/${this.userID}/Items?Recursive=true&IncludeItemTypes=Movie`)
+      .then((response: AxiosResponse<any>) =>{
+        resolve(response.data)
+      }).catch((error: any) => {
+        reject(error)
+      })
+    })
+  }
+
+  getItemInfo(itemID: string): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.embyAPI.get(`/Users/${this.userID}/Items/${itemID}`)
+      .then((response: AxiosResponse<any>) =>{
+        resolve(response.data)
+      }).catch((error: any) => {
+        reject(error)
       })
     })
   }
@@ -55,3 +66,4 @@ export class EmbyConnector implements IEmbyConnector {
     })
   }
 }
+
