@@ -1,31 +1,40 @@
 {
-  "name": "emby-api-ts",
-  "version": "0.0.6",
-  "description": "TypeScript implementation of Emby's api.",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "build": "node_modules/typescript/bin/tsc"
+  "_from": "emby-api-ts@*",
+  "_id": "emby-api-ts@0.0.6",
+  "_inBundle": false,
+  "_integrity": "sha512-Ym0/ZYrGGivIAYuExcTkunWK0MGC3y3L20z51h+eFq9IHM4b8Xm0gSeleoyY/HB+67wlv+FfimySz/xeMFZnoQ==",
+  "_location": "/emby-api-ts",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "emby-api-ts@*",
+    "name": "emby-api-ts",
+    "escapedName": "emby-api-ts",
+    "rawSpec": "*",
+    "saveSpec": null,
+    "fetchSpec": "*"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/ecavard/emby-api-ts.git"
-  },
-  "keywords": [
-    "emby",
-    "api",
-    "typescript",
-    "ts"
+  "_requiredBy": [
+    "#USER",
+    "/"
   ],
-  "author": "ecavard",
-  "license": "ISC",
+  "_resolved": "https://registry.npmjs.org/emby-api-ts/-/emby-api-ts-0.0.6.tgz",
+  "_shasum": "1ea777d650ca8c21629669b9022b348c2b0ef4ae",
+  "_spec": "emby-api-ts@*",
+  "_where": "/home/lebit/projects/EMBIT/backembit",
+  "author": {
+    "name": "ecavard"
+  },
   "bugs": {
     "url": "https://gitlab.com/ecavard/emby-api-ts/issues"
   },
-  "homepage": "https://gitlab.com/ecavard/emby-api-ts#readme",
+  "bundleDependencies": false,
   "dependencies": {
     "axios": "^0.19.2"
   },
+  "deprecated": false,
+  "description": "TypeScript implementation of Emby's api.",
   "devDependencies": {
     "@types/jest": "^25.1.2",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
@@ -35,5 +44,24 @@
     "jest": "^25.1.0",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
-  }
+  },
+  "homepage": "https://gitlab.com/ecavard/emby-api-ts#readme",
+  "keywords": [
+    "emby",
+    "api",
+    "typescript",
+    "ts"
+  ],
+  "license": "ISC",
+  "main": "lib/index.js",
+  "name": "emby-api-ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ecavard/emby-api-ts.git"
+  },
+  "scripts": {
+    "build": "node_modules/typescript/bin/tsc",
+    "test": "jest"
+  },
+  "version": "0.0.6"
 }
