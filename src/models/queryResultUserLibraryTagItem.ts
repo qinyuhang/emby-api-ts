@@ -9,9 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { UserLibraryTagItem } from './userLibraryTagItem';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface QueryResultUserLibraryTagItem { 
+    items?: Array<UserLibraryTagItem>;
+    totalRecordCount?: number;
 }

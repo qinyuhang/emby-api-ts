@@ -9,9 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { NewsNewsItem } from './newsNewsItem';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface QueryResultNewsNewsItem { 
+    items?: Array<NewsNewsItem>;
+    totalRecordCount?: number;
 }

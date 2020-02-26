@@ -10,8 +10,11 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface Version { 
+    major?: number;
+    minor?: number;
+    build?: number;
+    revision?: number;
+    majorRevision?: object;
+    minorRevision?: object;
 }

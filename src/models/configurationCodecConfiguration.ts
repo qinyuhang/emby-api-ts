@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface ConfigurationCodecConfiguration { 
+    isEnabled?: boolean;
+    priority?: number;
+    codecId?: string;
 }

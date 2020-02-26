@@ -9,9 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { SearchSearchHint } from './searchSearchHint';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface SearchSearchHintResult { 
+    searchHints?: Array<SearchSearchHint>;
+    totalRecordCount?: number;
 }

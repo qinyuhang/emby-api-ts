@@ -1,5 +1,8 @@
-import axios, { AxiosResponse, AxiosInstance } from 'axios'
+import axios, { AxiosResponse, AxiosInstance, AxiosError } from 'axios'
 import {AuthenticateUserByName} from './models/authenticateUserByName'
+import {AuthenticationAuthenticationResult} from './models/authenticationAuthenticationResult'
+import {QueryResultBaseItemDto} from './models/queryResultBaseItemDto'
+import * as camelcaseKeys from 'camelcase-keys'
 
 export class EmbyConnector {
   host: string
@@ -14,37 +17,40 @@ export class EmbyConnector {
     this.embyAPI = this.initiateEmbyAPI()
   }
 
-  authenticateByName(name: string, password: string): Promise<any> {
+  authenticateByName(name: string, password: string): Promise<AuthenticationAuthenticationResult> {
     this.name = name
-    return new Promise<any>((resolve, reject) => {
+    return new Promise<AuthenticationAuthenticationResult>((resolve, reject) => {
       const user: AuthenticateUserByName = {
         Username: name,
         Pw: password
       }
       this.embyAPI.post('/Users/AuthenticateByName', user)
-      .then((response: AxiosResponse<any>) => {
-        this.token = response.data.AccessToken
-        this.serverID = response.data.ServerId
-        this.userID = response.data.User.Id
+      .then((response: AxiosResponse) => {
+        const authResult: AuthenticationAuthenticationResult = response.data
+        this.token = authResult.accessToken
+        this.serverID = authResult.serverId
+        this.userID = authResult.user.id
         this.embyAPI.defaults.headers['X-Emby-Token'] = this.token
-        resolve(response.data)
-      }).catch((error: any) => {
+        resolve(authResult)
+      }).catch((error: AxiosError) => {
         reject(error)
       })
     })
   }
 
-  getAllMovies(): Promise<any> {
-    return new Promise<any>((resolve, reject) =>{
+  getAllMovies(): Promise<QueryResultBaseItemDto> {
+    return new Promise<QueryResultBaseItemDto>((resolve, reject) =>{
       this.embyAPI.get(`/Users/${this.userID}/Items?Recursive=true&IncludeItemTypes=Movie`)
-      .then((response: AxiosResponse<any>) =>{
-        resolve(response.data)
-      }).catch((error: any) => {
+      .then((response: AxiosResponse) =>{
+        const queryResult = response.data as QueryResultBaseItemDto
+        resolve(queryResult)
+      }).catch((error: AxiosError) => {
         reject(error)
       })
     })
   }
 
+  /*
   getItemInfo(itemID: string): Promise<any> {
     return new Promise<any>((resolve, reject) => {
       this.embyAPI.get(`/Users/${this.userID}/Items/${itemID}`)
@@ -55,15 +61,21 @@ export class EmbyConnector {
       })
     })
   }
+  */
 
   private initiateEmbyAPI(): AxiosInstance {
-    return axios.create({
+    const emby =  axios.create({
       baseURL: this.host + '/emby',
       headers: {
         'Content-Type': 'application/json',
         'X-Emby-Authorization': 'MediaBrowser Client="Embit", Version="4.4.0.2", Device="EmbyConnector-' + this.name + '", DeviceId="EmbyConnector-' + this.name + '"'
-      }
+      },
     })
+    emby.interceptors.response.use((response) =>{
+      response.data = camelcaseKeys(response.data, {deep: true}) as any
+      return response
+    }, (error) => {return error})
+    return emby
   }
 }
 

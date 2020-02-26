@@ -9,9 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { LiveTvLiveTvServiceInfo } from './liveTvLiveTvServiceInfo';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface LiveTvLiveTvInfo { 
+    services?: Array<LiveTvLiveTvServiceInfo>;
+    isEnabled?: boolean;
+    enabledUsers?: Array<string>;
 }

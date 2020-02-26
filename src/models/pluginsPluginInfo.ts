@@ -10,8 +10,11 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface PluginsPluginInfo { 
+    name?: string;
+    version?: string;
+    configurationFileName?: string;
+    description?: string;
+    id?: string;
+    imageTag?: string;
 }

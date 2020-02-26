@@ -9,9 +9,11 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { ConfigurationMediaPathInfo } from './configurationMediaPathInfo';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface LibraryAddMediaPath { 
+    id?: string;
+    path?: string;
+    pathInfo?: ConfigurationMediaPathInfo;
+    refreshLibrary?: boolean;
 }

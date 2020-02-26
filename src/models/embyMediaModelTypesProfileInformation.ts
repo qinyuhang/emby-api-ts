@@ -10,8 +10,9 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface EmbyMediaModelTypesProfileInformation { 
+    shortName?: string;
+    description?: string;
+    details?: string;
+    id?: string;
 }

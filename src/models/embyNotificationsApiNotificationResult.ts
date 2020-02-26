@@ -9,9 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { EmbyNotificationsApiNotification } from './embyNotificationsApiNotification';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface EmbyNotificationsApiNotificationResult { 
+    notifications?: Array<EmbyNotificationsApiNotification>;
+    totalRecordCount?: number;
 }

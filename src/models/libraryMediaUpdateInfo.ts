@@ -10,8 +10,7 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface LibraryMediaUpdateInfo { 
+    path?: string;
+    updateType?: string;
 }

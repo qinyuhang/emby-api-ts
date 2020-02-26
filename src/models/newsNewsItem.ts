@@ -10,8 +10,11 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface NewsNewsItem { 
+    title?: string;
+    link?: string;
+    description?: string;
+    descriptionHtml?: string;
+    guid?: string;
+    date?: Date;
 }

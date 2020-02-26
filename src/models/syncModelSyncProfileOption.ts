@@ -10,8 +10,10 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface SyncModelSyncProfileOption { 
+    name?: string;
+    description?: string;
+    id?: string;
+    isDefault?: boolean;
+    enableQualityOptions?: boolean;
 }

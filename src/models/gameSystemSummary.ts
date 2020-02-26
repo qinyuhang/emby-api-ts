@@ -10,8 +10,10 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface GameSystemSummary { 
+    name?: string;
+    displayName?: string;
+    gameCount?: number;
+    gameFileExtensions?: Array<string>;
+    clientInstalledGameCount?: number;
 }

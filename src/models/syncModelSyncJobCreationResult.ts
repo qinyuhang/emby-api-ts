@@ -9,9 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { SyncModelSyncJobItem } from './syncModelSyncJobItem';
+import { SyncSyncJob } from './syncSyncJob';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface SyncModelSyncJobCreationResult { 
+    job?: SyncSyncJob;
+    jobItems?: Array<SyncModelSyncJobItem>;
 }

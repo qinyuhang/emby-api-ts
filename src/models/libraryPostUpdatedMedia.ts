@@ -9,9 +9,8 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { LibraryMediaUpdateInfo } from './libraryMediaUpdateInfo';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface LibraryPostUpdatedMedia { 
+    updates?: Array<LibraryMediaUpdateInfo>;
 }

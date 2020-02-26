@@ -9,9 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { RemoteImageInfo } from './remoteImageInfo';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface RemoteImageResult { 
+    images?: Array<RemoteImageInfo>;
+    totalRecordCount?: number;
+    providers?: Array<string>;
 }

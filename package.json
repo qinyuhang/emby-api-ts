@@ -31,7 +31,8 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "camelcase-keys": "^6.1.2"
   },
   "deprecated": false,
   "description": "TypeScript implementation of Emby's api.",

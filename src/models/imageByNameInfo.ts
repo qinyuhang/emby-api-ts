@@ -10,8 +10,10 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface ImageByNameInfo { 
+    name?: string;
+    theme?: string;
+    context?: string;
+    fileLength?: number;
+    format?: string;
 }

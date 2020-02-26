@@ -9,9 +9,13 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { Version } from './version';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface CommonPluginsIPlugin { 
+    name?: string;
+    description?: string;
+    id?: string;
+    version?: Version;
+    assemblyFilePath?: string;
+    dataFolderPath?: string;
 }

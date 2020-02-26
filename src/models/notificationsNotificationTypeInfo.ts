@@ -10,8 +10,10 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface NotificationsNotificationTypeInfo { 
+    type?: string;
+    name?: string;
+    enabled?: boolean;
+    category?: string;
+    isBasedOnUserEvent?: boolean;
 }

@@ -9,9 +9,11 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { ProvidersAlbumInfo } from './providersAlbumInfo';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface ProvidersRemoteSearchQueryProvidersAlbumInfo { 
+    searchInfo?: ProvidersAlbumInfo;
+    itemId?: number;
+    searchProviderName?: string;
+    includeDisabledProviders?: boolean;
 }

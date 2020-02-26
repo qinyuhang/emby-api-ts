@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface ConnectUserLinkResult { 
+    isPending?: boolean;
+    isNewUserInvitation?: boolean;
+    guestDisplayName?: string;
 }

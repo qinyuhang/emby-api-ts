@@ -9,9 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { BaseItemDto } from './baseItemDto';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface ThemeMediaResult { 
+    ownerId?: number;
+    items?: Array<BaseItemDto>;
+    totalRecordCount?: number;
 }

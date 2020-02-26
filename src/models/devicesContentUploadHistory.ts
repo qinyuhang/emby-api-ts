@@ -9,9 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { DevicesLocalFileInfo } from './devicesLocalFileInfo';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface DevicesContentUploadHistory { 
+    deviceId?: string;
+    filesUploaded?: Array<DevicesLocalFileInfo>;
 }

@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface ChapterInfo { 
+    startPositionTicks?: number;
+    name?: string;
+    imageTag?: string;
 }

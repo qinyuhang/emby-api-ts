@@ -9,9 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { ConfigurationLibraryOptions } from './configurationLibraryOptions';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface LibraryUpdateLibraryOptions { 
+    id?: string;
+    libraryOptions?: ConfigurationLibraryOptions;
 }

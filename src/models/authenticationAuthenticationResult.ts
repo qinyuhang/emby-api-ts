@@ -9,9 +9,12 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { SessionSessionInfo } from './sessionSessionInfo';
+import { UserDto } from './userDto';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface AuthenticationAuthenticationResult { 
+    user: UserDto;
+    sessionInfo: SessionSessionInfo;
+    accessToken: string;
+    serverId: string;
 }

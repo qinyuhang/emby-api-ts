@@ -10,8 +10,13 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface DevicesDeviceInfo { 
+    name?: string;
+    id?: string;
+    lastUserName?: string;
+    appName?: string;
+    appVersion?: string;
+    lastUserId?: string;
+    dateLastActivity?: Date;
+    iconUrl?: string;
 }

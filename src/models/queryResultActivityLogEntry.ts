@@ -9,9 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { ActivityLogEntry } from './activityLogEntry';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface QueryResultActivityLogEntry { 
+    items?: Array<ActivityLogEntry>;
+    totalRecordCount?: number;
 }

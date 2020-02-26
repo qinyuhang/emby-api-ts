@@ -9,9 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { LiveTvSeriesTimerInfoDto } from './liveTvSeriesTimerInfoDto';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface QueryResultLiveTvSeriesTimerInfoDto { 
+    items?: Array<LiveTvSeriesTimerInfoDto>;
+    totalRecordCount?: number;
 }

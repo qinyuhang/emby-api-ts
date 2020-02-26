@@ -9,9 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { ThemeMediaResult } from './themeMediaResult';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface AllThemeMediaResult { 
+    themeVideosResult?: ThemeMediaResult;
+    themeSongsResult?: ThemeMediaResult;
+    soundtrackSongsResult?: ThemeMediaResult;
 }

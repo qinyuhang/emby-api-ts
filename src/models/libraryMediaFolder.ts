@@ -9,9 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { LibrarySubFolder } from './librarySubFolder';
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface LibraryMediaFolder { 
+    name?: string;
+    id?: string;
+    subFolders?: Array<LibrarySubFolder>;
 }

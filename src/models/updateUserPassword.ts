@@ -10,8 +10,9 @@
  * Do not edit the class manually.
  */
 
-export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+export interface UpdateUserPassword { 
+    id?: string;
+    currentPw?: string;
+    newPw?: string;
+    resetPassword?: boolean;
 }
