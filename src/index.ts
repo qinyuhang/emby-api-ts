@@ -21,8 +21,8 @@ export class EmbyConnector {
     this.name = name
     return new Promise<AuthenticationAuthenticationResult>((resolve, reject) => {
       const user: AuthenticateUserByName = {
-        Username: name,
-        Pw: password
+        username: name,
+        pw: password
       }
       this.embyAPI.post('/Users/AuthenticateByName', user)
       .then((response: AxiosResponse) => {
@@ -72,10 +72,9 @@ export class EmbyConnector {
       },
     })
     emby.interceptors.response.use((response) =>{
-      response.data = camelcaseKeys(response.data, {deep: true}) as any
+      response.data = camelcaseKeys(response.data, {deep: true})
       return response
     }, (error) => {return error})
     return emby
   }
 }
-

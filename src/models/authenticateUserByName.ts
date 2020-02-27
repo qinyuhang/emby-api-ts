@@ -11,7 +11,7 @@
  */
 
 export interface AuthenticateUserByName { 
-    Username?: string;
-    Password?: string;
-    Pw?: string;
+    username?: string;
+    password?: string;
+    pw?: string;
 }

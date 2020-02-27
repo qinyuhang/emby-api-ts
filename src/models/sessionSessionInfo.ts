@@ -25,7 +25,7 @@ export interface SessionSessionInfo {
     id?: string;
     serverId?: string;
     userId?: string;
-    userName?: string;
+    userName: string;
     userPrimaryImageTag?: string;
     client?: string;
     lastActivityDate?: Date;
