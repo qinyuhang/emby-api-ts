@@ -4,17 +4,22 @@ import {AuthenticationAuthenticationResult} from './models/authenticationAuthent
 import {QueryResultBaseItemDto} from './models/queryResultBaseItemDto'
 import * as camelcaseKeys from 'camelcase-keys'
 
-export class EmbyConnector {
+export default class EmbyConnector {
   host: string
   embyAPI: AxiosInstance
   token = ''
   serverID = ''
   name = ''
-  userID = ''
+  userID? = ''
 
-  constructor(host: string) {
+  constructor(host: string) 
+  constructor(host: string, token: string) 
+  constructor(host: string, token?: string) {
     this.host = host
+    if (token)
+      this.token = token
     this.embyAPI = this.initiateEmbyAPI()
+    this.embyAPI.defaults.headers['X-Emby-Token'] = this.token
   }
 
   authenticateByName(name: string, password: string): Promise<AuthenticationAuthenticationResult> {
@@ -40,7 +45,7 @@ export class EmbyConnector {
 
   getAllMovies(): Promise<QueryResultBaseItemDto> {
     return new Promise<QueryResultBaseItemDto>((resolve, reject) =>{
-      this.embyAPI.get(`/Users/${this.userID}/Items?Recursive=true&IncludeItemTypes=Movie`)
+      this.embyAPI.get('/Items?Recursive=true&IncludeItemTypes=Movie')
       .then((response: AxiosResponse) =>{
         const queryResult = response.data as QueryResultBaseItemDto
         resolve(queryResult)
@@ -50,7 +55,6 @@ export class EmbyConnector {
     })
   }
 
-  /*
   getItemInfo(itemID: string): Promise<any> {
     return new Promise<any>((resolve, reject) => {
       this.embyAPI.get(`/Users/${this.userID}/Items/${itemID}`)
@@ -61,7 +65,6 @@ export class EmbyConnector {
       })
     })
   }
-  */
 
   private initiateEmbyAPI(): AxiosInstance {
     const emby =  axios.create({

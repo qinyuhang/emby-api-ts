@@ -1,6 +1,6 @@
 import axios from 'axios'
 import mockAxios from 'axios'
-import { EmbyConnector } from '../index'
+import  EmbyConnector from '../index'
 import { AuthenticationAuthenticationResult } from '../models/authenticationAuthenticationResult';
 import { QueryResultBaseItemDto } from '../models/queryResultBaseItemDto';
 
