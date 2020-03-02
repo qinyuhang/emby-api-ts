@@ -1,5 +1,6 @@
 import axios, { AxiosResponse, AxiosInstance, AxiosError } from 'axios'
 import {AuthenticateUserByName} from './models/authenticateUserByName'
+import {BaseItemDto} from './models/baseItemDto'
 import {AuthenticationAuthenticationResult} from './models/authenticationAuthenticationResult'
 import {QueryResultBaseItemDto} from './models/queryResultBaseItemDto'
 import * as camelcaseKeys from 'camelcase-keys'
@@ -55,12 +56,12 @@ export default class EmbyConnector {
     })
   }
 
-  getItemInfo(itemID: string): Promise<any> {
-    return new Promise<any>((resolve, reject) => {
-      this.embyAPI.get(`/Users/${this.userID}/Items/${itemID}`)
-      .then((response: AxiosResponse<any>) =>{
+  getItemInfo(itemID: string): Promise<BaseItemDto> {
+    return new Promise<BaseItemDto>((resolve, reject) => {
+      this.embyAPI.get(`/Items/${itemID}`)
+      .then((response: AxiosResponse<BaseItemDto>) =>{
         resolve(response.data)
-      }).catch((error: any) => {
+      }).catch((error: AxiosError) => {
         reject(error)
       })
     })
