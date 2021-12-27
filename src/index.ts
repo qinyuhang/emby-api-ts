@@ -20,7 +20,6 @@ export default class EmbyConnector {
     if (token)
       this.token = token
     this.embyAPI = this.initiateEmbyAPI()
-    this.embyAPI.defaults.headers['X-Emby-Token'] = this.token
   }
 
   authenticateByName(name: string, password: string): Promise<AuthenticationAuthenticationResult> {
@@ -36,7 +35,6 @@ export default class EmbyConnector {
         this.token = authResult.accessToken
         this.serverID = authResult.serverId
         this.userID = authResult.user.id
-        this.embyAPI.defaults.headers['X-Emby-Token'] = this.token
         resolve(authResult)
       }).catch((error: AxiosError) => {
         reject(error)
@@ -68,12 +66,14 @@ export default class EmbyConnector {
   }
 
   private initiateEmbyAPI(): AxiosInstance {
+    const headers = {
+      'Content-Type': 'application/json',
+      'X-Emby-Token': this.token,
+      'X-Emby-Authorization': 'MediaBrowser Client="Embit", Version="4.4.0.2", Device="EmbyConnector-' + this.name + '", DeviceId="EmbyConnector-' + this.name + '"'
+    }
     const emby =  axios.create({
       baseURL: this.host + '/emby',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Emby-Authorization': 'MediaBrowser Client="Embit", Version="4.4.0.2", Device="EmbyConnector-' + this.name + '", DeviceId="EmbyConnector-' + this.name + '"'
-      },
+      headers,
     })
     emby.interceptors.response.use((response) =>{
       response.data = camelcaseKeys(response.data, {deep: true})
