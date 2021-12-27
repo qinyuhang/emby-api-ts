@@ -31,18 +31,18 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.24.0",
     "camelcase-keys": "^6.1.2"
   },
   "deprecated": false,
   "description": "TypeScript implementation of Emby's api.",
   "devDependencies": {
     "@types/jest": "^25.1.2",
-    "@typescript-eslint/eslint-plugin": "^2.19.0",
-    "@typescript-eslint/parser": "^2.19.0",
-    "eslint": "^6.8.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint": "^8.5.0",
     "eslint-plugin-tsdoc": "^0.2.1",
-    "jest": "^25.1.0",
+    "jest": "^27.4.5",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   },
