@@ -1,28 +1,4 @@
 {
-  "_from": "emby-api-ts@*",
-  "_id": "emby-api-ts@0.0.6",
-  "_inBundle": false,
-  "_integrity": "sha512-Ym0/ZYrGGivIAYuExcTkunWK0MGC3y3L20z51h+eFq9IHM4b8Xm0gSeleoyY/HB+67wlv+FfimySz/xeMFZnoQ==",
-  "_location": "/emby-api-ts",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "emby-api-ts@*",
-    "name": "emby-api-ts",
-    "escapedName": "emby-api-ts",
-    "rawSpec": "*",
-    "saveSpec": null,
-    "fetchSpec": "*"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/emby-api-ts/-/emby-api-ts-0.0.6.tgz",
-  "_shasum": "1ea777d650ca8c21629669b9022b348c2b0ef4ae",
-  "_spec": "emby-api-ts@*",
-  "_where": "/home/lebit/projects/EMBIT/backembit",
   "author": {
     "name": "ecavard"
   },
