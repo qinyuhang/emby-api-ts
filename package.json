@@ -3,7 +3,7 @@
     "name": "ecavard"
   },
   "bugs": {
-    "url": "https://gitlab.com/ecavard/emby-api-ts/issues"
+    "url": "https://github.com/qinyuhang/emby-api-ts/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -22,7 +22,7 @@
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   },
-  "homepage": "https://gitlab.com/ecavard/emby-api-ts#readme",
+  "homepage": "https://github.com/qinyuhang/emby-api-ts#readme",
   "keywords": [
     "emby",
     "api",
@@ -31,10 +31,10 @@
   ],
   "license": "ISC",
   "main": "lib/index.js",
-  "name": "emby-api-ts",
+  "name": "@qinyuhang/emby-api-ts",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/ecavard/emby-api-ts.git"
+    "url": "git+https://github.com/qinyuhang/emby-api-ts.git"
   },
   "scripts": {
     "build": "node_modules/typescript/bin/tsc",
